@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Momentum App</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="info">
+          <div class="location">
+            <span class="material-symbols-outlined">location_on</span>
+            <span class="location__text"></span>
+          </div>
+          <div class="weather">
+            <img
+              src="http://openweathermap.org/img/wn/01d@2x.png"
+              alt="weather"
+              class="weather__icon"
+            />
+            <span class="weather__temp"></span>
+          </div>
+        </div>
+        <div class="time">
+          <div class="clock">00:00:00</div>
+        </div>
+      </div>
+      <input
+        required
+        maxlength="15"
+        type="text"
+        placeholder="What is your name?"
+        class="login"
+      />
+      <div class="greeting hidden"></div>
+      <div class="saying">
+        <div class="profile">
+          <div class="avatar">
+            <img src="./img/quotes/9.jpg" alt="profile" />
+          </div>
+          <div class="author"></div>
+        </div>
+        <div class="quote"></div>
+      </div>
+      <main class="main">
+        <section class="section__rsp">
+          <div class="rps__title">
+            Win the game of rock, paper, scissors!
+          </div>
+          <div class="rsp__score">SCORE : <span>0</span></div>
+          <div class="rsp--container">
+            <img src="./img/rsp/rock.png" alt="rock" class="rsp rsp0 active" />
+            <img src="./img/rsp/scissors.png" alt="scissors" class="rsp rsp1" />
+            <img src="./img/rsp/paper.png" alt="paper" class="rsp rsp2" />
+            <div class="rsp__cover rsp__ready active">
+              <div class="rsp__cover__text">Press the Start Button!</div>
+              <div class="rsp__replay">
+                <span class="material-symbols-outlined">replay</span>
+                <span>REPLAY</span>
+              </div>
+            </div>
+          </div>
+          <button class="rsp__start active">START</button>
+          <div class="rsp__btns">
+            <div class="rsp__btn" data-rsp="0">
+              <img src="./img/rsp/rock.png" alt="rock" />
+            </div>
+            <div class="rsp__btn" data-rsp="1">
+              <img src="./img/rsp/scissors.png" alt="scissors" />
+            </div>
+            <div class="rsp__btn" data-rsp="2">
+              <img src="./img/rsp/paper.png" alt="paper" />
+            </div>
+          </div>
+        </section>
+        <section class="section__todo">
+          <div class="todo__title">
+            To Do List
+          </div>
+          <form id="todo-form">
+            <input
+              type="text"
+              placeholder="Write a To Do and Press Enter"
+              required
+            />
+          </form>
+          <ul id="todo-list"></ul>
+        </section>
+      </main>
+    </div>
+    <script src="js/greetings.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
+  </body>
+</html>

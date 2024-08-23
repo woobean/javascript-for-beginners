@@ -1,0 +1,423 @@
+@import url("https://fonts.googleapis.com/css2?family=Honk&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nabla&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.login {
+  padding: 8px 24px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border: 2px solid white;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.75);
+  width: fit-content;
+  font-size: 24px;
+  color: #0074c7;
+}
+
+@media screen and (max-width: 640px) {
+  .login {
+    width: 100%;
+  }
+}
+
+.login::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.greeting {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 8px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.greeting span {
+  color: #0074c7;
+}
+
+.hidden {
+  display: none;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 32px);
+  max-width: 1200px;
+  padding: 24px;
+  margin: 24px auto;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+}
+
+.location span {
+  font-size: 14px;
+  color: #333333;
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+}
+
+.weather__icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.weather__temp {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.clock {
+  font-family: "Honk", system-ui;
+  font-size: 64px;
+  text-align: right;
+}
+
+@media screen and (max-width: 640px) {
+  .clock {
+    font-size: 32px;
+  }
+}
+
+.saying {
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 16px;
+  row-gap: 8px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author {
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+
+.quote {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.main {
+  display: flex;
+  gap: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+}
+
+/* rsp */
+.section__rsp {
+  width: 320px;
+}
+
+@media screen and (max-width: 768px) {
+  .section__rsp {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.rps__title {
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.rsp--container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.rsp {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.rsp.active {
+  display: block;
+}
+
+.rsp__cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 12px;
+  color: white;
+}
+
+.rsp__cover__text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.rsp__cover.active {
+  display: flex;
+}
+
+.rsp__replay {
+  border: 1px solid white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
+  display: none;
+}
+
+.rsp__replay:hover {
+  background-color: white;
+  color: black;
+}
+
+.rsp__replay.active {
+  display: block;
+}
+
+.rsp__replay span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.rsp__start {
+  display: none;
+  width: 320px;
+  height: 94px;
+  border: unset;
+  border-radius: 8px;
+  background-color: #0074c7;
+  cursor: pointer;
+  transition: transform 0.1s;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: white;
+}
+
+.rsp__start:active {
+  transform: scale(0.95);
+}
+
+.rsp__start.active {
+  display: block;
+}
+
+.rsp__btns {
+  align-items: center;
+  justify-content: space-between;
+  width: 320px;
+  display: none;
+}
+
+.rsp__btns.active {
+  display: flex;
+}
+
+.rsp__btns.disabled {
+  pointer-events: none;
+}
+
+.rsp__btn {
+  box-sizing: border-box;
+  border: 1px solid #0074c7;
+  background-color: white;
+  border-radius: 8px;
+  width: 94px;
+  height: 94px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s;
+}
+
+.rsp__btn:active {
+  transform: scale(0.95);
+}
+
+.rsp__btn.active {
+  background-color: #0074c7;
+}
+
+.rsp__btn img {
+  display: block;
+  width: 80%;
+  height: 80%;
+}
+
+.rsp__score {
+  margin-bottom: 16px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.section__todo {
+  flex: 1;
+}
+
+.todo__title {
+  margin-bottom: 16px;
+  font-family: "Nabla", system-ui;
+  font-size: 48px;
+  text-align: center;
+}
+
+#todo-form input {
+  padding: 8px 16px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border: 2px solid white;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.75);
+  font-size: 20px;
+}
+
+#todo-form input::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+#todo-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+#todo-list li {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  padding: 16px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.todo__text {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.todo__tools {
+  display: flex;
+  column-gap: 4px;
+}
+
+.todo__tools.disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.todo__tools button {
+  border: unset;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+}
+
+.todo__tools button:nth-child(1) {
+  background-color: #0074c7;
+}
+
+.todo__tools button:nth-child(2) {
+  background-color: #cccccc;
+}
+
+.todo__tools button span {
+  font-size: 16px;
+}
